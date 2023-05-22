@@ -11,6 +11,7 @@
         <img src="{{asset('storage/' . $project->image)}}" alt="{{ $project->title }}">
     </div>
     <p><strong>Description:</strong> {{ $project->description }}</p>
+    <p><strong>type:</strong> {{ $project->type?->name ?: 'No selection' }}</p>
     <p><strong>Start date:</strong> {{ $project->start_date }}</p>
     <p><strong>End date:</strong> {{ $project->end_date }}</p>
     <p><strong>Slug:</strong> {{ $project->slug }}</p>

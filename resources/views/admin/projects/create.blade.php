@@ -32,6 +32,17 @@
                 <label class="form-label ms-3" for="end_date">End date</label>
                 <input type="date" id="end_date" name="end_date" value="{{ old('end_date') }}">
             </div>
+
+            <div class="mb-3">
+                <label for="type_id" class="form-label">type</label>
+                <select class="form-select" name="type_id" id="type_id">
+                    <option value="">Select type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            
             <div class="mb-3">
                 <label for="image" class="form-label">Add Image</label>
                 <input class="form-control" type="file" id="formFile" name="image">
