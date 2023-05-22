@@ -19,9 +19,9 @@ class TypeSeeder extends Seeder
     {
         $types = ['Frontend', 'Backend', 'AI', 'DBA'];
 
-        
+        Schema::disableForeignKeyConstraints();
         Type::truncate();
-        
+        Schema::enableForeignKeyConstraints();
         foreach ($types as $type) {
             $newType = new Type();
             $newType->name = $type;
